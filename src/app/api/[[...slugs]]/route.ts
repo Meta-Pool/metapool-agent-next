@@ -41,7 +41,7 @@ const app = new Elysia({ prefix: "/api", aot: false })
       icon: "",
     };
   })
-  .get("/swap/:tokenIn/:tokenOut/:quantity", async ({ params: { tokenIn, tokenOut, quantity }, headers }) => {
+  .get("/stake/:quantity", async ({ params: { tokenIn, tokenOut, quantity }, headers }) => {
     const mbMetadata = JSON.parse(headers["mb-metadata"] || "{}");
     const accountId = mbMetadata?.accountData?.accountId || "near";
 
