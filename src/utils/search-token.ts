@@ -27,5 +27,5 @@ export const searchToken = (query: string): AllowlistedToken[] => {
   const result = fuse.search(query);
 
   // Map the result to only return the tokens
-  return result.map((res) => res.item);
+  return result.map((res: any) => res.item);
 };
