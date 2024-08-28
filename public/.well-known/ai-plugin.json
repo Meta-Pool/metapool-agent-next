@@ -24,7 +24,31 @@
     }
   },
   "paths": {
-
+    "/api/balance": {
+      "get": {
+        "description": "Fetch for stNEAR balance.",
+        "operationId": "getstNEARBalance",
+        "responses": {
+          "200": {
+            "description": "stNEAR balance retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "balance": {
+                      "type": "string",
+                      "description": "The stNEAR balance of the user."
+                    }
+                  },
+                  "required": ["balance"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/swap/{quantity}": {
       "get": {
         "summary": "Get stake transactions",
@@ -43,7 +67,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Swap transactions generated successfully.",
+            "description": "Stake transactions generated successfully.",
             "content": {
               "application/json": {
                 "schema": {
